@@ -26,3 +26,17 @@ Ensure you have the following:
 - **Ensure your domain has the required permissions.**
 - **Use the Data Science 3.0 kernel in SageMaker Studio.**
 
+
+## Installation
+```
+git clone https://github.com/.git
+cd ./amazon-bedrock-samples/agents-for-bedrock/use-case-examples/text-2-sql-agent-cdk-enhanced
+export AWS_PROFILE=XXX
+python3.9 -m venv .venv
+source .venv/bin/activate
+aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws
+chmod +x setup.sh
+./setup.sh
+```
+
+
