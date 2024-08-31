@@ -43,7 +43,7 @@ class MyStack(Stack):
                              ])
 
         # Glue Database
-        glue_database_name = "denali_ai"
+        glue_database_name = "vehicle-data"
         glue.CfnDatabase(self, "GlueDatabase",
                          catalog_id=account_id,
                          database_input=glue.CfnDatabase.DatabaseInputProperty(name=glue_database_name)
@@ -52,7 +52,7 @@ class MyStack(Stack):
         # Glue Crawler
         glue.CfnCrawler(
             self,
-            "Denali_AI_Chatbot_Crawler",
+            "AI_Chatbot_Crawler",
             role=glue_role.role_arn,
             database_name=glue_database_name,
             schedule=glue.CfnCrawler.ScheduleProperty(schedule_expression="cron(0/1 * * * ? *)"),
@@ -94,8 +94,6 @@ class MyStack(Stack):
                 f"arn:aws:glue:{region}:{account_id}:catalog",
                 f"arn:aws:glue:{region}:{account_id}:database/{glue_database_name}",
                 f"arn:aws:glue:{region}:{account_id}:table/{glue_database_name}/*",
-                f"arn:aws:glue:{region}:{account_id}:table/denali",
-                f"arn:aws:glue:{region}:{account_id}:table/denali/*"
             ]
         ))
 
@@ -116,7 +114,7 @@ class MyStack(Stack):
         ))
 
         # Generate Agent Instruction
-        instruction_text = generate_instruction(database_name="denali_ai", data_context=None, env=ENV)
+        instruction_text = generate_instruction(database_name=glue_database_name, data_context=None, env=ENV)
         question = (
             "Craft a comprehensive and cohesive paragraph instruction for the Bedrock agent, ensuring the instruction "
             "text includes all 7 contextual details and examples provided. The instruction should be detailed, precise "
