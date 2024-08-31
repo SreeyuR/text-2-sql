@@ -1,6 +1,11 @@
 # text-2-sql
 Web server (backend only) for SQL chatbot that converts text into SQL queries.
 
+This code sample showcases the backend server for a Text-to-SQL chatbot powered by a Bedrock Agent. It converts natural language queries into SQL statements, enabling users to interact with complex databases using straightforward English prompts. The backend facilitates seamless access to data insights by translating user inquiries into precise SQL queries and fetching relevant results from the database.
+
+Leveraging AWS Bedrock's agent technology, this code base provides a complete setup for deploying and testing a Text-to-SQL chatbot integrated with AWS services. It encompasses all the necessary files to create and operate a chatbot that understands and processes natural language, executes SQL queries, and retrieves database schemas.
+
+When a query’s response is too lengthy, the chatbot generates a link for users to download the data in a report format, making it easier to review and analyze. The infrastructure is built using AWS CDK, ensuring flexibility to work with any dataset as long as it is stored in an S3 bucket. This repository offers a comprehensive solution for developing a user-friendly data retrieval system, simplifying interactions with complex database structures.
 
 ## Before You Begin
 
