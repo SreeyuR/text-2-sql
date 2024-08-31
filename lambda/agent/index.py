@@ -6,7 +6,7 @@ import gzip
 from io import BytesIO
 
 outputLocation = os.environ['outputLocation']
-database_name = 'denali_ai'  # os.environ['glue_database_name']
+database_name = os.environ['glue_database_name']
 region = os.environ['region']
 bucket_name = os.environ['bucket_name']
 
@@ -113,7 +113,7 @@ def save_to_s3(data, key):
     """
     Save data to a specific folder within an S3 bucket.
     """
-    bucket_name = 'denali-ai-chatbot-reports'
+    bucket_name = 'reports'
     folder_path = 'ChatbotQueryData/agent_cli'
     s3_client = boto3.client('s3', region_name=region)
     full_key = f"{folder_path.rstrip('/')}/{key}"
