@@ -37,5 +37,21 @@ aws ecr-public get-login-password --region us-east-1 | docker login --username A
 chmod +x setup.sh
 ./setup.sh
 ```
+- Upload `vehicle-data` with the same directory structure to S3
+- Create an S3 bucket with the name `athena-destination-store-texttosql`
+
+## Deployment
+```
+cdk deploy --profile XXX --context--context region=us-east-1
+```
+
+## Usage
+"What are 10 models and types of vehicles available in Illinois?"
+
+## Cleaning Up
+```
+cdk destroy --profile XXX --context zip_file_name=EV_WA.zip --context region=us-east-1
+```
+
 
 
