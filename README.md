@@ -29,9 +29,8 @@ Ensure you have the following:
 
 ## Installation
 ```
-git clone https://github.com/.git
-cd ./amazon-bedrock-samples/agents-for-bedrock/use-case-examples/text-2-sql-agent-cdk-enhanced
-export AWS_PROFILE=XXX
+git clone https://github.com/SreeyuR/text-2-sql.git
+export AWS_PROFILE=<YOUU_AWS_PROFILE>
 python3.9 -m venv .venv
 source .venv/bin/activate
 aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws
