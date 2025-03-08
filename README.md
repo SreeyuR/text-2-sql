@@ -1,4 +1,4 @@
-# text-2-sql
+# text-2-sql agentic framework
 Web server (backend only) for SQL chatbot that converts text into SQL queries.
 
 This code sample showcases the backend server for a Text-to-SQL chatbot powered by a Bedrock Agent. It converts natural language queries into SQL statements, enabling users to interact with complex databases using straightforward English prompts. The backend facilitates seamless access to data insights by translating user inquiries into precise SQL queries and fetching relevant results from the database.
